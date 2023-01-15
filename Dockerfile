@@ -1,14 +1,13 @@
-FROM ubuntu:18.04
-MAINTAINER uli.hitzel@gmail.com
+FROM ubuntu:23.04
 EXPOSE 8080 5901
 ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=Asia/Singapore
+ENV TZ=Africa/Johannesburg
 
 RUN apt-get update
 RUN apt-get install -y xfce4 xfce4-terminal
 RUN apt-get install -y novnc
 RUN apt-get install -y tightvncserver websockify
-RUN apt-get install -y wget net-tools wget curl chromium-browser firefox openssh-client git
+RUN apt-get install -y wget net-tools wget curl chromium-browser openssh-client git
 ENV USER root
 
 COPY start.sh /start.sh
